@@ -1,0 +1,18 @@
+{
+  "name": "unleash-defect-3d",
+  "version": "0.1.0",
+  "description": "Place 2D AI detections onto a 3D point cloud, with real coordinates",
+  "type": "module",
+  "main": "src/index.js",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "test": "node --test --max-old-space-size=4096 test/*.test.mjs",
+    "serve": "node -e \"const h=require('http'),f=require('fs'),p=require('path');h.createServer((q,s)=>{const fp=p.join('web',q.url==='/'?'index.html':q.url);f.readFile(fp,(e,d)=>e?(s.writeHead(404),s.end()):(s.writeHead(200,{'Content-Type':fp.endsWith('.html')?'text/html':'application/octet-stream'}),s.end(d)))}).listen(8080,()=>console.log('http://localhost:8080'))\""
+  },
+  "dependencies": {
+    "laz-perf": "^0.0.7",
+    "proj4": "^2.22.0"
+  },
+  "license": "UNLICENSED",
+  "private": true
+}
